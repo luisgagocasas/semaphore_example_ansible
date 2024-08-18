@@ -1,0 +1,11 @@
+---
+- name: Get hostname and IP address of Alpine hosts
+  hosts: web_servers
+  gather_facts: yes
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+
+    - name: Print message
+      ansible.builtin.debug:
+      msg: Hello world
