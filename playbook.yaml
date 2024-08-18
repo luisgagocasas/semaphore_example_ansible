@@ -19,7 +19,6 @@
         status_code: 200
         return_content: yes
         validate_certs: no
-        timeout: 30  # Tiempo de espera en segundos
       register: webhook_response
 
     - name: Debug webhook response
