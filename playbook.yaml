@@ -11,3 +11,15 @@
     - name: Print debug message
       debug:
         msg: Hello, world!
+
+    - name: Trigger webhook
+      uri:
+        url: "https://alertmanager_gotify.ayphu.com/gotify_webhook?token=Ao.VjP3D-NMVwkC"
+        method: GET
+        status_code: 200
+        return_content: yes
+      register: webhook_response
+
+    - name: Debug webhook response
+      debug:
+        var: webhook_response.content
