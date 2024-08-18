@@ -3,9 +3,10 @@
   hosts: web_servers
   gather_facts: yes
   tasks:
-    - name: Ping my hosts
-     ansible.builtin.ping:
+    # - name: Display hostname and IP address
+    #   debug:
+    #     msg: "Hostname: {{ ansible_hostname }}, IP Address: {{ ansible_default_ipv4.address }}"
 
-    - name: Print message
-      ansible.builtin.debug:
-        msg: Hello world
+    - name: Print debug message
+      debug:
+        msg: Hello, world!
