@@ -12,6 +12,14 @@
       debug:
         msg: Hello, world!
 
+    - name: Ping site
+      shell: ping -c 1 -w 2 ayphu.com
+      register: ping_result
+
+    - name: Ping result
+      debug:
+        msg: "{{ ping_result.stdout_lines }}"
+
     - name: Trigger webhook with increased timeout
       uri:
         url: "https://alertmanager_gotify.ayphu.com/gotify_webhook?token=Ao.VjP3D-NMVwkC"
