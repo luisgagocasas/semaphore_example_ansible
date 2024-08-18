@@ -15,7 +15,7 @@
     - name: Trigger webhook with increased timeout
       uri:
         url: "https://alertmanager_gotify.ayphu.com/gotify_webhook?token=Ao.VjP3D-NMVwkC"
-        method: GET
+        method: POST
         status_code: 200
         return_content: yes
         validate_certs: no
