@@ -19,16 +19,3 @@
     - name: Ping result
       debug:
         msg: "{{ ping_result.stdout_lines }}"
-
-    - name: Trigger webhook with increased timeout
-      uri:
-        url: "https://alertmanager_gotify.ayphu.com/gotify_webhook?token=Ao.VjP3D-NMVwkC"
-        method: POST
-        status_code: 200
-        return_content: yes
-        validate_certs: no
-      register: webhook_response
-
-    - name: Debug webhook response
-      debug:
-        var: webhook_response.content
