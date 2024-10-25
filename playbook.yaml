@@ -1,7 +1,7 @@
 ---
 - name: Get hostname and IP address of Alpine hosts
   hosts: web_servers
-  connection: local
+  become: yes
   gather_facts: yes
   tasks:
     # - name: Display hostname and IP address
